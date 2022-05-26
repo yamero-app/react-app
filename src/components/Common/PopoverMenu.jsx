@@ -1,15 +1,18 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function PopoverMenu({ children }) {
+  const navigate = useNavigate();
+
   const solutions = [
     {
       name: 'Log Out',
-      function: () => {},
+      function: () => navigate('/', { replace: true }),
     },
     {
       name: 'Profile',
-      function: () => {},
+      function: () => navigate('/user', { replace: true }),
     },
   ];
 

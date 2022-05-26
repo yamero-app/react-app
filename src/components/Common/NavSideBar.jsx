@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 // External Lib imports
+import { Link, useLocation } from 'react-router-dom';
 import { FolderIcon, MenuIcon, UsersIcon } from '@heroicons/react/outline';
 
 // Component imports
@@ -17,19 +18,20 @@ function classNames(...classes) {
 export default function NavSideBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [openQueModal, setOpenQueModal] = useState(false);
+  const location = useLocation();
 
   const navigation = [
     {
       name: 'feed',
-      href: '/feed',
+      route: '/feed',
       icon: FolderIcon,
-      // current: router.pathname === '/feed'
+      current: location.pathname === '/feed'
     },
     {
       name: 'profile',
-      href: '/user',
+      route: '/user',
       icon: UsersIcon,
-      // current: router.pathname === '/user'
+      current: location.pathname === '/user'
     },
   ];
 
@@ -52,9 +54,9 @@ export default function NavSideBar() {
           </div>
           <nav className="mt-5 flex-1 px-2 space-y-1">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.route}
                 className={classNames(
                   item.current
                     ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
@@ -72,7 +74,7 @@ export default function NavSideBar() {
                   aria-hidden="true"
                 />
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
