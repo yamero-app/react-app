@@ -1,17 +1,12 @@
-import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 const Home = () => {
-  const { data: session } = useSession();
-  const router = useRouter();
-
   // REDIRECTS TO /feed IF LOGGED IN
-  useEffect(() => {
-    if (session) {
-      router.push('/feed');
-    }
-  }, [session, router]);
+  // useEffect(() => {
+  //   if (session) {
+  //     router.push('/feed');
+  //   }
+  // }, [session, router]);
 
   return (
     <section className="py-12 w-full flex flex-col items-center">

@@ -107,6 +107,7 @@ export default function QuestionCard({ user, que, ans }) {
     </div>
   );
 
+  // Show More button at bottom-right of answers
   const ShowMore = () => (
     <div className="flex justify-end">
       {!showmore ? (
@@ -164,9 +165,7 @@ export default function QuestionCard({ user, que, ans }) {
           </section>
           {/* Answer Section */}
           <section>
-            <p className={showmore ? 'line-clamp-none' : 'line-clamp-2'}>
-              {ans}
-            </p>
+            <p className={showmore ? 'line-clamp-none' : 'line-clamp-2'}>{ans}</p>
             {/* Answer Button */}
             <AnswerBtn />
           </section>

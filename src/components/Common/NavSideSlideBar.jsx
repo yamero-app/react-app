@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
-import YameroLogo from '../../../public/images/yamero-logo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -50,7 +49,7 @@ export default function NavSideSlideBar({ sidebarOpen, setSidebarOpen, navigatio
             </Transition.Child>
             <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto dark:bg-dark-grey">
               <div className="flex-shrink-0 flex items-center px-4">
-                <YameroLogo />
+                <img src="/images/yamero-logo.svg" alt="logo" />
               </div>
               <nav className="mt-5 flex-1 px-2 space-y-1">
                 {navigation.map((item) => (
